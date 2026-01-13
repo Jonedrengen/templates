@@ -134,9 +134,9 @@ A comprehensive catalog of all available templates organized by category.
 **Use Case:** Documenting required environment variables for your application.
 
 ### ESLint Configuration
-**File:** `config/.eslintrc.json`  
-**Description:** Modern ESLint setup for JavaScript/TypeScript with React and accessibility rules.  
-**Use Case:** Setting up code linting for JavaScript/TypeScript projects.
+**Files:** `config/.eslintrc.json` and `config/.eslintrc.js`  
+**Description:** Modern ESLint setup for JavaScript/TypeScript with React and accessibility rules. Available in both JSON and JavaScript formats.  
+**Use Case:** Setting up code linting for JavaScript/TypeScript projects. Use .json for pure configuration or .js for configuration with comments.
 
 ## Documentation Templates
 
