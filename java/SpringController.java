@@ -2,6 +2,10 @@
  * Spring Boot REST Controller Template
  * 
  * Template for creating a REST API controller with Spring Boot.
+ * 
+ * Dependencies required in pom.xml or build.gradle:
+ * - spring-boot-starter-web
+ * - spring-boot-starter-validation
  */
 
 package com.example.controller;

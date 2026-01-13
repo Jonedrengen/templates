@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"time"
 
+	// External dependency - install with: go get github.com/gorilla/mux
 	"github.com/gorilla/mux"
 )
 

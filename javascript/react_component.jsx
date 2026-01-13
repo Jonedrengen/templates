@@ -2,6 +2,10 @@
  * React Component Template
  * 
  * Template for creating a functional React component with hooks.
+ * 
+ * Dependencies required (install with: npm install):
+ * - react
+ * - prop-types
  */
 
 import React, { useState, useEffect } from 'react';
@@ -9,7 +13,7 @@ import PropTypes from 'prop-types';
 
 const ComponentName = ({ prop1, prop2, onEvent }) => {
   // State management
-  const [state, setState] = useState(initialValue);
+  const [state, setState] = useState('initial value');
 
   // Side effects
   useEffect(() => {
@@ -23,9 +27,10 @@ const ComponentName = ({ prop1, prop2, onEvent }) => {
 
   // Event handlers
   const handleClick = () => {
+    const eventData = { message: 'Button clicked', state };
     // Handle click logic
     if (onEvent) {
-      onEvent(data);
+      onEvent(eventData);
     }
   };
 

@@ -2,6 +2,9 @@
 Flask Application Template
 
 Basic structure for a Flask web application.
+
+Dependencies required (install with: pip install flask):
+- Flask
 """
 
 from flask import Flask, render_template, request, jsonify

@@ -1,6 +1,10 @@
 // Rust Struct Template
 //
 // Template for creating a Rust struct with common patterns and traits.
+//
+// Dependencies required in Cargo.toml:
+// [dependencies]
+// uuid = { version = "1.0", features = ["v4"] }
 
 use std::fmt;
 use std::time::SystemTime;

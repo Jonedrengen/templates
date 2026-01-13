@@ -1,6 +1,14 @@
 // Rust Web Server Template using Actix-web
 //
 // Template for creating a REST API server with Actix-web framework.
+//
+// Dependencies required in Cargo.toml:
+// [dependencies]
+// actix-web = "4"
+// serde = { version = "1.0", features = ["derive"] }
+// serde_json = "1.0"
+// uuid = { version = "1.0", features = ["v4"] }
+// chrono = { version = "0.4", features = ["serde"] }
 
 use actix_web::{web, App, HttpResponse, HttpServer, Responder, Result};
 use serde::{Deserialize, Serialize};

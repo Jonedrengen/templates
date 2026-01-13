@@ -2,6 +2,12 @@
  * Express Server Template
  * 
  * Basic Node.js Express server setup with common middleware.
+ * 
+ * Dependencies required (install with: npm install):
+ * - express
+ * - cors
+ * - helmet
+ * - morgan
  */
 
 const express = require('express');
