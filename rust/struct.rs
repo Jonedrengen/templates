@@ -32,11 +32,19 @@ impl Entity {
     /// ```
     pub fn new(name: String) -> Self {
         Self {
-            id: uuid::Uuid::new_v4().to_string(),
+            id: Self::generate_uuid(),
             name,
             created_at: SystemTime::now(),
             metadata: std::collections::HashMap::new(),
         }
+    }
+
+    /// Generates a simple UUID-like string
+    /// Note: For production use, add uuid crate and use: uuid::Uuid::new_v4().to_string()
+    fn generate_uuid() -> String {
+        use std::time::{SystemTime, UNIX_EPOCH};
+        let duration = SystemTime::now().duration_since(UNIX_EPOCH).unwrap();
+        format!("{:x}", duration.as_nanos())
     }
 
     /// Gets the ID of the entity

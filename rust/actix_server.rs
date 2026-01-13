@@ -11,8 +11,10 @@
 // chrono = { version = "0.4", features = ["serde"] }
 
 use actix_web::{web, App, HttpResponse, HttpServer, Responder, Result};
+use chrono::Utc;
 use serde::{Deserialize, Serialize};
 use std::sync::Mutex;
+use uuid::Uuid;
 
 /// Entity data structure
 #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -45,7 +47,7 @@ async fn index() -> impl Responder {
 async fn health() -> impl Responder {
     HttpResponse::Ok().json(serde_json::json!({
         "status": "healthy",
-        "timestamp": chrono::Utc::now().to_rfc3339()
+        "timestamp": Utc::now().to_rfc3339()
     }))
 }
 
@@ -79,9 +81,9 @@ async fn create_entity(
     let mut entities = data.entities.lock().unwrap();
     
     let entity = Entity {
-        id: uuid::Uuid::new_v4().to_string(),
+        id: Uuid::new_v4().to_string(),
         name: payload.name.clone(),
-        created_at: chrono::Utc::now().to_rfc3339(),
+        created_at: Utc::now().to_rfc3339(),
     };
     
     entities.push(entity.clone());

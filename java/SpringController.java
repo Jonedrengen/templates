@@ -97,12 +97,15 @@ public class EntityController {
 
     /**
      * Exception handler for validation errors.
+     * Note: Import the appropriate exception class based on your setup:
+     * - javax.validation.ValidationException (for Java EE/Jakarta EE)
+     * - Or define a custom ValidationException in your project
      *
      * @param ex The exception
      * @return Error response
      */
-    @ExceptionHandler(ValidationException.class)
-    public ResponseEntity<ErrorResponse> handleValidationException(ValidationException ex) {
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ErrorResponse> handleValidationException(IllegalArgumentException ex) {
         ErrorResponse error = new ErrorResponse(
                 HttpStatus.BAD_REQUEST.value(),
                 ex.getMessage()
